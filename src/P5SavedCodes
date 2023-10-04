@@ -1,0 +1,616 @@
+/*public Iterator<T> iterator()
+    {
+        return new Iterator<T>() {
+
+            int row = 0;
+            int col = 0;
+
+            public boolean hasNext()
+            {
+                boolean boo = true;
+
+                // row + 1 and col + 1 shift the index of row and col by 1
+
+                if(((row + 1) * (col +1)) == (getHeight() * getWidth()))
+                {
+                    boo = false;
+                    return boo;
+
+                }
+
+
+                return boo; // else, return true element has next
+            }
+
+            @Override
+            public T next()
+            {
+                T value = matrix[row][col];
+                col++;
+                if (col == getWidth()) {
+                    col = 0;
+                    row++;
+                }
+                return value;
+            }
+
+                /*if(row == matrix[0].length)
+                {
+                    row++;
+                    col = 0;
+
+                }
+
+                return matrix[row][col++];
+
+
+                if(row == getWidth() && col == getHeight()) // if it's last element
+                {
+                    throw new NoSuchElementException();
+                }
+
+
+            }
+
+            public void remove() {
+                throw new UnsupportedOperationException();
+            }
+
+        };
+
+    }*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    static TwoValues bestStartingPoints()
+
+
+    TwoValues result = new TwoValues();
+            result.startingColumn = 0;
+            result.totalPoints = 0;
+            int highest = 0; // use to check highest in arraylist
+            int startingColIndex = 0;
+
+            // Loop through the first line of generated field
+            //get all the max summs that each starting indeces can have
+            // store all of these max summs in an arraylist
+            // return the highest number in the arraylist by looping through arrayList
+            // return the corresponding number to the highest sum
+
+
+           // int hs = 0; // stores the highest sum at each starting point
+            //int firstLine = board.getWidth(); // first line of board
+
+            /*ArrayList<Integer> startingPointSums = new ArrayList<>();
+
+            for (int i = 0; i < firstLine; i++) {
+                hs += bestSum(0,i,board,0);
+                startingPointSums.add(hs);
+            }
+
+            for (int i = 0; i < startingPointSums.size(); i++)
+            {
+                if(highest < startingPointSums.get(i))
+                {
+                    highest = startingPointSums.get(i);
+                    startingColIndex = i; // capture the index of the starting collumn
+                }
+            }
+
+            result.totalPoints = highest;
+            result.startingColumn = board.getElement(0,startingColIndex).getValue();*/
+
+
+
+
+    /*boolean boo = false;
+
+            int row = field.getHeight() - 1;
+            int col = field.getWidth() - 1;
+
+
+            //for (int i = 0; i < row; i++) {
+                //for (int j = 0; j < col; j++)
+                //{
+                    String currEl = field.getElement(currRow, currCol + 1).getClass().getName();  // get name of curr Element
+                    if(currEl.equals(iterableObjectName) && currEl != null && !currEl.equals(" "))
+                    {
+                        return true;
+                    }
+            if(currRow == row && currCol == col)
+            {
+            return false;
+            }
+
+            return boo;
+
+            }*/
+            /*int nextRow = 0;
+            int nextCol = 0;
+
+            String objName = field.getElement(nextRow, nextCol).getClass().getName();
+
+            while ((nextRow < field.getHeight()) && (iterableObjectName != null) && (!objName.equals(iterableObjectName)))
+            {
+                nextCol++; //WORK
+
+            }*/
+
+            /*do {
+                nextCol++;
+                if (nextCol >= field.getWidth()) {
+                    nextCol = 0;
+                    nextRow++;
+                }
+            } while (nextRow < field.getHeight() && (iterableObjectName != null && !field.getElement(nextRow, nextCol).getClass().getName().equals(iterableObjectName)));
+
+            if (nextRow < field.getHeight()) {
+                currentRow = nextRow;
+                currentCol = nextCol;
+                return true;
+            } else {
+                return false;
+            } }*/
+
+
+
+
+
+
+
+            public T next() {
+                    int col = currCol;
+                    int row = currRow;
+                    String currEl = field.getElement(currRow, currCol++).getClass().getName();  // get name of curr Element
+
+                    if(hasNext() == false)
+                    {
+                        throw new NoSuchElementException();
+                    }
+
+                    // if hasNext() == true;
+
+                        T value = field.getElement(row,col); // current element: 0,0
+
+
+                        if(hasNext() ==true && col < field.getWidth() && currEl.equals(iterableObjectName))
+                        {
+                            value = field.getElement(row,col++);
+                        }
+
+                        if(col == field.getWidth() - 1)
+                        {
+                            col = 0;
+                            row++;
+                        }
+
+                        else{value = null;}
+
+
+                    return value;
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+        // return next element if currEl equals objectName, col ++
+        // if not equal, keep looping to find the next element.
+        // if reach the end and nothing equals to Object Name, return false;
+
+        /*int col = currCol;
+        int row = currRow;
+        T value;
+
+        if(hasNext() == false)
+        {
+            throw new NoSuchElementException();
+        }
+
+
+
+        return field.getElement(row, col++);*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+        fieldIterator hasNext()
+        /*while(true) {
+                    String currEl = field.getElement(currRow, currCol++).getClass().getName();  // get name of curr Element
+
+                    if (currCol >= field.getWidth()) {
+                        currCol = 0;
+                        currRow++;
+                    }
+
+                    if ((currRow >= field.getHeight() || currRow == field.getHeight() - 1) && currCol >= field.getWidth()) {
+                        return false;
+                    }
+
+                    if (currRow >= field.getHeight()) {
+                        return false;
+                    }
+
+                    if (currEl.equals(iterableObjectName) && currRow < field.getHeight()) {
+                        return true;
+                    } else {
+                        currCol++;
+                    }
+                }*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                HasNext
+
+                boolean boo = false;
+
+                        for (int i = 0; i < field.getHeight(); i++) {
+                            for (int j = 0; j < field.getWidth(); j++) {
+                                if(field.getElement(i,j).getClass().getName().equals(iterableObjectName))
+                                {return true;}
+                            }
+                        }
+
+
+                        return boo;\
+
+
+
+
+
+
+
+
+            Next
+          T iterableObjValue = null;
+
+                 if(!hasNext())
+                 {
+                     throw new NoSuchElementException();
+                 }
+
+
+                 //double loop through it
+
+
+                 for (int i = 0; i < field.getHeight(); i++) {
+                     for (int j = 0; j < field.getWidth(); j++) {
+                         if(field.getElement(i,j).getClass().getName().equals(iterableObjectName))
+                         {iterableObjValue= field.getElement(i,j);}
+                     }
+                 }
+
+                 return iterableObjValue;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*for (int i = 0; i < field.getHeight(); i++) {
+            for (int j = 0; j < field.getWidth(); j++) {
+                if(field.getElement(i,j).equals(iterableObjectName) && iterableObjectName.equals("Passage"))
+                {
+                    numPassage++;
+                }
+
+                else if(field.getElement(i,j).equals(iterableObjectName) && iterableObjectName.equals("Obstacle"))
+                {
+                    numObstacles++;
+                }
+            }
+
+        }*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        RandomIntegers:
+
+         public static Field<Block> randomIntegers(int h, int w, int l, int m, int n) // DOUBLE CHECK
+            {
+                /*
+                * It generates a Field where passages and obstacles have random placements.
+                h is the height of the Field
+                w is the width of the Field
+                l is the lowest random number of points that a Passage can have
+                m is the largest random number of points that a Passage can have
+                n is the number of Obstacle objects in the Field.
+                *
+                * */
+
+                Field<Block> field = new Field<>(h, w);
+                Random random = new Random();
+
+                //obstacles
+                int obstacles = 0;
+                while (obstacles < n) {
+                    int row = random.nextInt(h);
+                    int col = random.nextInt(w);
+                    if (field.getElement(row, col) == null) {
+                        field.setElement(row, col, new Obstacle("-"));
+                        obstacles++;
+                    }
+                }
+
+                //passage
+                for (int i = 0; i < h; i++) {
+                    for (int j = 0; j < w; j++) {
+                        if (field.getElement(i, j) == null) {
+                            int value = l + random.nextInt(m - l + 1);
+                            field.setElement(i, j, new Passage(value));
+                        }
+                    }
+                }
+                return field;
+            }
+
+
+
+
+
+
+
+
+
+            //James
+                    //count number of obstacles
+                    int obstaclesCount = 0;
+                    for (int r = 0; r < field.getHeight(); r++) {
+                        for (int j = 0; j < field.getWidth(); j++) {
+                            if(field.getElement(r,j) instanceof Obstacle)
+                            {
+                                obstaclesCount++;
+                            }
+                        }
+                    }
+
+                    while (obstaclesCount < n) {
+                        for (int r = 0; r < field.getHeight(); r++) {
+                            for (int j = 0; j < field.getWidth(); j++) {
+                                if (!(field.getElement(r, j) instanceof Obstacle)) {
+                                        field.setElement(r, j, new Obstacle("-"));
+                                }
+                            }
+                        }
+                            obstaclesCount++;
+                    }
+
+
+
+
+
+
+
+
+                    //Generating obstacles
+                            int obstacles = 0;
+                            while (obstacles < n) {
+                                if (field.getElement(random.nextInt(h), random.nextInt(w)) == null) {
+                                    field.setElement(random.nextInt(h), random.nextInt(w), new Obstacle("-"));
+                                    obstacles++;
+                                }
+                            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        public static void main(String[] args) throws FileNotFoundException {
+
+                //tested FieldIterator
+                /*Iterator<Block> it = field.iterator("Obstacle"); // same thing for Obstacle objects
+                while(it.hasNext())
+                    System.out.println(it.next());*/
+
+
+                //testing Field
+
+                /**
+                 example of loading data from a file
+                 */
+
+                System.out.println("Testing FieldGenerator loadDataFromFile: ");
+
+                //Field<Block> field = FieldGenerator.loadDataFromFile(args[0]);
+                Field<Block> field = FieldGenerator.loadDataFromFile("temp.txt");
+                System.out.println(field);
+
+                System.out.println("----------------------- ");
+                System.out.println("Testing FieldGenerator randomIntegers: ");
+
+                //Field<Block> field = FieldGenerator.loadDataFromFile(args[0]);
+                Field<Block> field1 = FieldGenerator.randomIntegers(4, 3, 1,9,12);
+                System.out.println(field1);
+
+                System.out.println("----------------------- ");
+                System.out.println("Testing Field class next() & hasNext(): ");
+
+
+
+
+                Iterator<Block> iterator = field.iterator();
+                while (iterator.hasNext()) {
+                    System.out.println(iterator.next());
+                }
+
+
+                System.out.println("----------------------- ");
+                System.out.println("Testing FieldIterator class next() & hasNext() Passages: ");
+
+
+                /**
+                 Example of running a while loop
+                 This will invoke the overloaded iterator (the one using the FieldIterator class)
+                 */
+                Iterator<Block> it = field.iterator("Passage");
+        //      Iterator<Block> it = field.iterator("Obstacle"); // same thing for Obstacle objects
+                while(it.hasNext())
+                    System.out.println(it.next());
+
+
+
+                System.out.println("----------------------- ");
+                System.out.println("Testing FieldIterator class next() & hasNext() Obstacles: ");
+
+
+                /**
+                 Example of running a while loop
+                 This will invoke the overloaded iterator (the one using the FieldIterator class)
+                 */
+                Iterator<Block> it1 = field.iterator("Obstacle");
+                while(it1.hasNext())
+                    System.out.print(it1.next());
+
+
+
+
+                System.out.println();
+                System.out.println("----------------------- ");
+                System.out.println("Testing Game bestStartingPoints with randomIntegers: ");
+
+
+                //example of generating a random Field
+
+                Field<Block> field2 = FieldGenerator.randomIntegers(3,3,0,9,0);
+
+
+                 //print the whole field
+
+                System.out.println(field2);
+                System.out.println("starting collumn index: " + bestStartingPoint(field2).startingColumn);
+                System.out.println("total points: " + bestStartingPoint(field2).totalPoints);
+
+
+
+                System.out.println("----------------------- ");
+                System.out.println("Testing Game bestStartingPoints with LoadDatafromFile: ");
+
+
+                //example of generating a random Field
+
+                Field<Block> field3 = FieldGenerator.loadDataFromFile("temp.txt");
+
+
+                //print the whole field
+
+                System.out.println(field3);
+                System.out.println("starting collumn index:" + bestStartingPoint(field3).startingColumn);
+                System.out.println( "total points: " + bestStartingPoint(field3).totalPoints);
+
+            }
